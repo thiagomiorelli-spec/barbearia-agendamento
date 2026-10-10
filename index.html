@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agendamento Horário</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Importação direta das fontes Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <h1>Agendamento de Horário</h1>
+    </header>
+
+    <!-- Formulário à esquerda e agendamentos à direita -->
+    <div class="conteudo">
+      <main>
+        <form id="form-agendamento">
+          <!-- Campo Nome -->
+          <div>
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required />
+            <span id="erro-nome" class="mensagem-erro"></span>
+          </div>
+
+          <!-- Campo Telefone -->
+          <div>
+            <label for="telefone">Telefone / WhatsApp</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required />
+            <span id="erro-telefone" class="mensagem-erro"></span>
+          </div>
+
+          <!-- Campo Serviço (Select) -->
+          <div>
+            <label for="servico">Serviço</label>
+            <select id="servico" name="servico" required>
+              <option value="">Selecione um serviço...</option>
+              <option value="Corte de cabelo">Corte de Cabelo - R$ 50,00</option>
+              <option value="Barba Completa">Barba Completa - R$ 35,00</option>
+              <option value="Combo Cabelo + Barba">Combo Cabelo + Barba - R$ 70,00</option>
+            </select>
+            <span id="erro-servico" class="mensagem-erro"></span>
+          </div>
+
+          <!-- Campo Data -->
+          <div>
+            <label for="data">Data</label>
+            <input type="date" id="data" name="data" required />
+            <span id="erro-data" class="mensagem-erro"></span>
+          </div>
+
+          <!-- Campo Horário -->
+          <div>
+            <label for="hora">Horário</label>
+            <select id="hora" name="hora" required>
+              <option value="">Selecione um horário...</option>
+              <option value="08:00">08:00</option>
+              <option value="08:30">08:30</option>
+              <option value="09:00">09:00</option>
+              <option value="09:30">09:30</option>
+              <option value="10:00">10:00</option>
+              <option value="10:30">10:30</option>
+              <option value="11:00">11:00</option>
+              <option value="11:30">11:30</option>
+              <option value="12:00">12:00</option>
+              <option value="13:30">13:30</option>
+              <option value="14:00">14:00</option>
+              <option value="14:30">14:30</option>
+              <option value="15:00">15:00</option>
+              <option value="15:30">15:30</option>
+              <option value="16:00">16:00</option>
+              <option value="16:30">16:30</option>
+              <option value="17:00">17:00</option>
+              <option value="17:30">17:30</option>
+              <option value="18:00">18:00</option>
+              <option value="18:30">18:30</option>
+              <option value="19:00">19:00</option>
+              <option value="19:30">19:30</option>
+              <option value="20:00">20:00</option>
+            </select>
+            <span id="erro-hora" class="mensagem-erro"></span>
+          </div>
+
+          <!-- Botão de Envio -->
+          <div>
+            <button type="submit" id="submit">Confirmar Agendamento</button>
+          </div>
+        </form>
+      </main>
+
+      <!-- Lista de agendamentos -->
+      <section>
+        <h2>Agendamentos</h2>
+        <ul id="lista-agendamentos"></ul>
+      </section>
+    </div>
+
+    <footer>
+      <p>&copy; Barbearia. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

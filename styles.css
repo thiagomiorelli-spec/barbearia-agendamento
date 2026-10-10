@@ -1,0 +1,208 @@
+/* Reset básico para remover margens padrão */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fundo da página e centralização */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #c6dbfc;
+  color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Cabeçalho */
+header {
+  width: 100%;
+  background-color: #0d233a;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 5px solid #d32f2f;
+}
+
+header h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Formulário à esquerda e agendamentos à direita */
+.conteudo {
+  width: 100%;
+  max-width: 1150px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+/* Área principal (Centralização do Card) */
+main {
+  width: 100%;
+  max-width: 480px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Card do Formulário */
+#form-agendamento {
+  background-color: #ffffff;
+  width: 100%;
+  padding: 30px 25px;
+  border-radius: 8px;
+  /* Borda lateral estilizada na cor vermelha da barbearia */
+  border-left: 6px solid #d32f2f;
+  border-right: 6px solid #0d233a;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Cada grupo de campo */
+#form-agendamento div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+/* Rótulos dos campos (Labels) */
+#form-agendamento label {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0d233a;
+  margin-bottom: 6px;
+}
+
+/* Estilização dos Inputs e Selects */
+#form-agendamento input,
+#form-agendamento select {
+  font-family: "Poppins", sans-serif;
+  padding: 12px;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: #fff;
+}
+
+/* Foco do campo (Efeito azul ao selecionar) */
+#form-agendamento input:focus,
+#form-agendamento select:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.15);
+}
+
+/* Destacar campo ao apresentar erro */
+#form-agendamento input.erro,
+#form-agendamento select.erro {
+  border: 2px solid red;
+}
+
+/* Mensagem de erro embaixo do campo */
+.mensagem-erro {
+  color: #d32f2f;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+/* Botões (Confirmar Agendamento e Cancelar usam o mesmo formato) */
+#form-agendamento button,
+#lista-agendamentos button {
+  font-family: "Playfair Display", serif;
+  background-color: #d32f2f;
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#form-agendamento button {
+  margin-top: 10px;
+}
+
+/* Hover e Clique dos Botões */
+#form-agendamento button:hover,
+#lista-agendamentos button:hover {
+  background-color: #b71c1c;
+}
+
+#form-agendamento button:active,
+#lista-agendamentos button:active {
+  transform: scale(0.98);
+}
+
+/* Lista de agendamentos */
+section {
+  width: 100%;
+  max-width: 650px;
+  padding: 20px;
+}
+
+section h2 {
+  font-family: "Playfair Display", serif;
+  color: #0d233a;
+  margin-bottom: 12px;
+}
+
+#lista-agendamentos {
+  list-style: none;
+}
+
+#lista-agendamentos li {
+  background-color: #ffffff;
+  padding: 15px 18px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border-left: 6px solid #d32f2f;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+/* Texto do agendamento */
+#lista-agendamentos div {
+  white-space: pre-line;
+  line-height: 1.6;
+}
+
+/* Botão cancelar */
+#lista-agendamentos button {
+  flex-shrink: 0;
+  padding: 12px 20px;
+}
+
+/* Rodapé */
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+  background-color: #0d233a;
+  color: #ffffff;
+  font-size: 0.85rem;
+  border-top: 3px solid #0056b3;
+}
+
+/* No celular, o formulário e a lista ficam um embaixo do outro */
+@media (max-width: 900px) {
+  .conteudo {
+    flex-direction: column;
+    align-items: center;
+  }
+}
